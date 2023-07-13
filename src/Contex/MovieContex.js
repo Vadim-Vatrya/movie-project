@@ -3,7 +3,7 @@ import { useState, createContext, useEffect, popularMovies } from 'react';
 export const MovieContex = createContext();
 
 export const MovieState = ({ children }) => {
-  const API_KEY = '0d4e8a72aec64d2db9275b816bb7cbd6';
+  const API_KEY = '9d4fbae6d45a1f406cc115a66a4de03d';
 
   const [hiddenMenu, setHiddenMenu] = useState(true);
   const [activeLink, setActiveLink] = useState('Popular');
@@ -11,9 +11,9 @@ export const MovieState = ({ children }) => {
 
   const getPopularMovies = async () => {
     const popularMoviesResponse = await fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key = ${API_KEY}&language=en-US&page=1`,
+      `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=3`,
     );
-    const popularMoviesData = await Response.json();
+    const popularMoviesData = await popularMoviesResponse.json();
     setPopularMpvies(popularMoviesData);
   };
 
