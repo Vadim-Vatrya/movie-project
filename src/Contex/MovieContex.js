@@ -12,6 +12,7 @@ export const MovieState = ({ children }) => {
   const [search, setSearch] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [movies, setMovies] = useState([]);
+  const [showPagination, setShowPagination] = useState(true);
 
   const getPopularMovies = async () => {
     const popularMoviesResponse = await fetch(
@@ -44,6 +45,16 @@ export const MovieState = ({ children }) => {
 
     const searchData = await searchResponse.json();
     setMovies(searchData);
+    setShowPagination(false);
+  };
+
+  const newPage = direction => {
+    if (direction === 'next') {
+      setCurrentPage(currentPage + 1);
+      setIsLoading(true);
+    } else if (direction === 'previous' && currentPage !== 1) {
+      setCurrentPage(currentPage - 1);
+    }
   };
 
   useEffect(() => {
@@ -51,6 +62,10 @@ export const MovieState = ({ children }) => {
   }, []);
 
   useEffect(() => {
+    if (search.trim() === '') {
+      setShowPagination(true);
+    }
+
     getMovies();
   }, [search, currentPage]);
 
@@ -80,6 +95,9 @@ export const MovieState = ({ children }) => {
         handleSearch,
         isLoading,
         setIsLoading,
+        showPagination,
+        setShowPagination,
+        newPage,
       }}
     >
       {children}

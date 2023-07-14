@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Loader = () => <Div className="loader"></Div>;
 
-const Div = styled.loader`
+const Div = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;

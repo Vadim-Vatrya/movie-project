@@ -8,6 +8,7 @@ import Container from 'react-dom';
 
 const Movies = () => {
   const { movies, isLoading } = useContext(MovieContex);
+
   return (
     <>
       <Div className="movies">
