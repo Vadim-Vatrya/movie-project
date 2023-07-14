@@ -69,6 +69,8 @@ export const MovieState = ({ children }) => {
         activeLink,
         setActiveLink,
         popularMovies,
+        currentPage,
+        setCurrentPage,
         search,
         setSearch,
         movies,
@@ -76,6 +78,8 @@ export const MovieState = ({ children }) => {
         getPopularMovies,
         getMovies,
         handleSearch,
+        isLoading,
+        setIsLoading,
       }}
     >
       {children}
