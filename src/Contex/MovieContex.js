@@ -5,6 +5,7 @@ export const MovieContex = createContext();
 export const MovieState = ({ children }) => {
   const API_KEY = '0d4e8a72aec64d2db9275b816bb7cbd6';
 
+  const [isLoading, setIsLoading] = useState(false);
   const [hiddenMenu, setHiddenMenu] = useState(true);
   const [activeLink, setActiveLink] = useState('Popular');
   const [popularMovies, setPopularMovies] = useState([]);
@@ -53,6 +54,13 @@ export const MovieState = ({ children }) => {
     getMovies();
   }, [search, currentPage]);
 
+  useEffect(() => {
+    const loadingTimeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 1300);
+    return () => clearTimeout(loadingTimeout);
+  }, [movies, currentPage]);
+
   return (
     <MovieContex.Provider
       value={{
@@ -65,6 +73,9 @@ export const MovieState = ({ children }) => {
         setSearch,
         movies,
         setMovies,
+        getPopularMovies,
+        getMovies,
+        handleSearch,
       }}
     >
       {children}
