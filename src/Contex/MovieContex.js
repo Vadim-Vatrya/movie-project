@@ -8,17 +8,50 @@ export const MovieState = ({ children }) => {
   const [hiddenMenu, setHiddenMenu] = useState(true);
   const [activeLink, setActiveLink] = useState('Popular');
   const [popularMovies, setPopularMovies] = useState([]);
+  const [search, setSearch] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [movies, setMovies] = useState([]);
+
   const getPopularMovies = async () => {
     const popularMoviesResponse = await fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=3`,
+      `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${currentPage}`,
     );
     const popularMoviesData = await popularMoviesResponse.json();
     setPopularMovies(popularMoviesData);
   };
 
+  const getMovies = async () => {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${currentPage}`,
+    );
+    const data = await response.json();
+
+    if (search.trim() === '') {
+      setMovies(data);
+    }
+  };
+
+  const handleSearch = async e => {
+    e.PreventDefault();
+    if (search.trim === '') {
+      return;
+    }
+
+    const searchResponse = await fetch(`
+    https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${search}&page=${currentPage},
+    `);
+
+    const searchData = await searchResponse.json();
+    setMovies(searchData);
+  };
+
   useEffect(() => {
     getPopularMovies();
   }, []);
+
+  useEffect(() => {
+    getMovies();
+  }, [search, currentPage]);
 
   return (
     <MovieContex.Provider
@@ -28,6 +61,10 @@ export const MovieState = ({ children }) => {
         activeLink,
         setActiveLink,
         popularMovies,
+        search,
+        setSearch,
+        movies,
+        setMovies,
       }}
     >
       {children}
