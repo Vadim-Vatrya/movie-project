@@ -1,7 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useContext } from 'react';
+import { MovieContext } from '../../Contex/MovieContex';
 
 const HeroNavSearch = () => {
+  const { search, setSearch, handleSearch, activeLink } =
+    useContext(MovieContext);
+
   return (
     <>
       <Form>
