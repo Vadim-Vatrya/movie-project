@@ -12,7 +12,15 @@ const MoviesPagination = () => {
       {showPagination && (
         <Container>
           <React.Fragment>
-            <button onClick={() => newPage('previous')}>PrevPage</button>
+            <button
+              style={{
+                cursor: currentPage !== 1 ? 'pointer' : 'not-allowed',
+                background: currentPage !== 1 ? '#32de57' : '#303847',
+              }}
+              onClick={() => newPage('previous')}
+            >
+              PrevPage
+            </button>
             <button onClick={() => newPage('next')}>NextPage</button>
           </React.Fragment>
         </Container>
@@ -22,7 +30,7 @@ const MoviesPagination = () => {
 };
 
 const Div = styled.div`
-  idth: 100%;
+  width: 100%;
   min-height: calc(100vh - 80px);
   display: flex;
   > .container {
