@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useContext } from 'react';
-import { MovieContext } from '../../Contex/MovieContex';
+import { MovieContext } from '../../Context/MovieContext';
 
 const HeroNavSearch = () => {
   const { search, setSearch, handleSearch, activeLink } =
@@ -9,8 +9,15 @@ const HeroNavSearch = () => {
 
   return (
     <>
-      <Form>
-        <input type="text" placeholder="Search for movies ..." />
+      <Form nSubmit={handleSearch}>
+        {activeLink !== 'Popular' && (
+          <input
+            type="text"
+            placeholder="Search for movies ..."
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+          />
+        )}
       </Form>
     </>
   );

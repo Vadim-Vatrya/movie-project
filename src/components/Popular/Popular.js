@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useContext } from 'react';
-import { MovieContex } from '../../Contex/MovieContex';
+import { MovieContext } from '../../Context/MovieContext';
 import Container from '../ReusableComponents/Container';
 
 const Popular = () => {
-  const { popularMovies } = useContext(MovieContex);
+  const { popularMovies } = useContext(MovieContext);
 
   return (
     <Div className="popularMovies">

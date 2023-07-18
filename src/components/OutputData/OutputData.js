@@ -1,12 +1,12 @@
 import React from 'react';
 import { useContext } from 'react';
-import { MovieContex } from '../../Contex/MovieContex';
+import { MovieContext } from '../../Context/MovieContext';
 import Container from '../ReusableComponents/Container';
 import Popular from '../Popular/Popular';
 import Movies from '../Movies/Movies';
 
 const OutputData = () => {
-  const { activeLink } = useContext(MovieContex);
+  const { activeLink } = useContext(MovieContext);
 
   return (
     <div className="outputdata">

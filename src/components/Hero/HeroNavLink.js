@@ -1,10 +1,10 @@
 import React from 'react';
 import { useContext } from 'react';
-import { MovieContex } from '../../Contex/MovieContex';
+import { MovieContext } from '../../Context/MovieContext';
 import styled from 'styled-components';
 
 const HeroNavLink = ({ btnText }) => {
-  const { setHiddenMenu, activeLink, setActiveLink } = useContext(MovieContex);
+  const { setHiddenMenu, activeLink, setActiveLink } = useContext(MovieContext);
   return (
     <Button
       onClick={() => {

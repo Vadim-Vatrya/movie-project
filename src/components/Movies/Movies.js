@@ -1,13 +1,13 @@
 import React from 'react';
 import { useContext } from 'react';
-import { MovieContex } from '../../Contex/MovieContex';
+import { MovieContext } from '../../Context/MovieContext';
 import styled from 'styled-components';
 
 import Loader from '../ReusableComponents/Loader';
 import Container from 'react-dom';
 
 const Movies = () => {
-  const { movies, isLoading } = useContext(MovieContex);
+  const { movies, isLoading } = useContext(MovieContext);
 
   return (
     <>

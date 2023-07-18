@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useContext } from 'react';
-import { MovieContex } from '../../Contex/MovieContex';
+import { MovieContext } from '../../Context/MovieContext';
 
 import HeroNavLink from './HeroNavLink';
 
 const HeroNavMenu = () => {
-  const { hiddenMenu } = useContext(MovieContex);
+  const { hiddenMenu } = useContext(MovieContext);
   return (
     <Div>
       <HeroNavLink

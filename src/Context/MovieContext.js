@@ -1,6 +1,6 @@
 import { useState, createContext, useEffect } from 'react';
 
-export const MovieContex = createContext();
+export const MovieContext = createContext();
 
 export const MovieState = ({ children }) => {
   const API_KEY = '0d4e8a72aec64d2db9275b816bb7cbd6';
@@ -77,7 +77,7 @@ export const MovieState = ({ children }) => {
   }, [movies, currentPage]);
 
   return (
-    <MovieContex.Provider
+    <MovieContext.Provider
       value={{
         hiddenMenu,
         setHiddenMenu,
@@ -101,6 +101,6 @@ export const MovieState = ({ children }) => {
       }}
     >
       {children}
-    </MovieContex.Provider>
+    </MovieContext.Provider>
   );
 };

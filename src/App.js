@@ -1,6 +1,6 @@
 import './App.css';
 import './index.css';
-import { MovieState } from './Contex/MovieContex';
+import { MovieState } from './Context/MovieContext';
 import Hero from './components/Hero/Hero';
 
 const App = () => {
