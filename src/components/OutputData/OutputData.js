@@ -16,6 +16,7 @@ const OutputData = () => {
         <Container>
           <React.Fragment>
             <Movies />
+            <MoviesPagination />
           </React.Fragment>
         </Container>
       )}
