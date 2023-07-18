@@ -4,20 +4,24 @@ import { MovieContext } from '../../Context/MovieContext';
 import Container from '../ReusableComponents/Container';
 import Popular from '../Popular/Popular';
 import Movies from '../Movies/Movies';
+import MoviesPagination from '../Movies/MoviesPagination';
+import PopularFilms from '../Popular/Popular';
 
 const OutputData = () => {
   const { activeLink } = useContext(MovieContext);
 
   return (
     <div className="outputdata">
+      {activeLink === 'All Movies' && (
+        <Container>
+          <React.Fragment>
+            <Movies />
+          </React.Fragment>
+        </Container>
+      )}
       {activeLink === 'Popular' && (
         <Container>
           <Popular />
-        </Container>
-      )}
-      {activeLink === 'All Movies' && (
-        <Container>
-          <Movies />
         </Container>
       )}
     </div>

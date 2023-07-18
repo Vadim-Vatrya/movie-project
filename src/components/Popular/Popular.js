@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { MovieContext } from '../../Context/MovieContext';
 import Container from '../ReusableComponents/Container';
 
-const Popular = () => {
+const PopularFilms = () => {
   const { popularMovies } = useContext(MovieContext);
 
   return (
@@ -79,4 +79,4 @@ const Div = styled.div`
   }
 `;
 
-export default Popular;
+export default PopularFilms;
