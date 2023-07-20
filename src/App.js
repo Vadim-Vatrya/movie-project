@@ -1,5 +1,6 @@
+import React from 'react';
 import './App.css';
-import './index.css';
+
 import { MovieState } from './Context/MovieContext';
 import Hero from './components/Hero/Hero';
 

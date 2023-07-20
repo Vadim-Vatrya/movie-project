@@ -34,8 +34,8 @@ export const MovieState = ({ children }) => {
   };
 
   const handleSearch = async e => {
-    e.PreventDefault();
-    if (search.trim === '') {
+    e.preventDefault();
+    if (search.trim() === '') {
       return;
     }
 
@@ -65,7 +65,6 @@ export const MovieState = ({ children }) => {
     if (search.trim() === '') {
       setShowPagination(true);
     }
-
     getMovies();
   }, [search, currentPage]);
 
@@ -84,6 +83,7 @@ export const MovieState = ({ children }) => {
         activeLink,
         setActiveLink,
         popularMovies,
+        setPopularMovies,
         currentPage,
         setCurrentPage,
         search,
