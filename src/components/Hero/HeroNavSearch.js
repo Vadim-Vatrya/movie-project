@@ -9,7 +9,7 @@ const HeroNavSearch = () => {
 
   return (
     <>
-      <Form nSubmit={handleSearch}>
+      <Form onSubmit={handleSearch}>
         {activeLink !== 'Popular' && (
           <input
             type="text"

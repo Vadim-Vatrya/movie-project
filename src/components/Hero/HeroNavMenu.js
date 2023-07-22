@@ -8,11 +8,8 @@ import HeroNavLink from './HeroNavLink';
 const HeroNavMenu = () => {
   const { hiddenMenu } = useContext(MovieContext);
   return (
-    <Div>
-      <HeroNavLink
-        btnText="Popular"
-        className={(hiddenMenu ? 'hidden' : '') + ' heroNavMenu'}
-      />
+    <Div className={(hiddenMenu ? 'hidden' : '') + ' heroNavMenu'}>
+      <HeroNavLink btnText="Popular" />
       <HeroNavLink btnText="All Movies" />
     </Div>
   );

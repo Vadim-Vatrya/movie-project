@@ -19,6 +19,7 @@ const HeroNavLink = ({ btnText }) => {
 };
 
 const Button = styled.button`
+  border: none;
   outline: none;
   background: transparent;
   font-size: 22px;
@@ -26,8 +27,6 @@ const Button = styled.button`
   font-weight: 700;
   cursor: pointer;
   user-select: none;
-  border: none;
-
   @media (max-width: 860px) {
     font-size: 40px;
   }
