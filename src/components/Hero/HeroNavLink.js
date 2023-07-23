@@ -7,11 +7,11 @@ const HeroNavLink = ({ btnText }) => {
   const { setHiddenMenu, activeLink, setActiveLink } = useContext(MovieContext);
   return (
     <Button
+      style={{ color: activeLink === btnText ? '#f9a5ff' : '#fff' }}
       onClick={() => {
         setActiveLink(btnText);
         setHiddenMenu(true);
       }}
-      style={{ color: activeLink === btnText ? '#f9a5ff' : '#fff' }}
     >
       {btnText}
     </Button>

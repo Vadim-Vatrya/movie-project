@@ -42,7 +42,7 @@ const Nav = styled.nav`
       align-items: center;
     }
     #burgerMenu {
-      color: #fff;
+      color: #f9a5ff;
       cursor: pointer;
       display: none;
     }
@@ -54,7 +54,6 @@ const Nav = styled.nav`
       }
     }
   }
-
   @media (max-width: 1365px) {
     .container {
       max-width: 90%;

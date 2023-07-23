@@ -31,16 +31,30 @@ const MoviesPagination = () => {
 
 const Div = styled.div`
   width: 100%;
-  min-height: calc(100vh - 80px);
-  display: flex;
-  > .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-  }
-  @media (max-width: 1365px) {
-    > .container {
-      max-width: 90%;
+  .container {
+    &:nth-child(1) {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      button {
+        border: none;
+        outline: none;
+        background: #32de57;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        border-radius: 4px;
+        width: 160px;
+        padding: 10px 0;
+        cursor: pointer;
+        user-select: none;
+        margin: 0 10px;
+        transition: background 500ms ease-in-out;
+        &:hover {
+          background: #259a3e;
+        }
+      }
     }
   }
 `;
